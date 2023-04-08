@@ -26,3 +26,4 @@ char** fizzBuzz(int n, int* returnSize) {
 
     return result;
 }
+

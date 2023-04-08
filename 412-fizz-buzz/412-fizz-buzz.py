@@ -13,3 +13,7 @@ class Solution:
             else:
                 lis.append(str(i))
         return lis
+
+sol = Solution()
+result = sol.fizzBuzz(30)
+print(result)
