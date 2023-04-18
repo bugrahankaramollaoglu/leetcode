@@ -25,16 +25,6 @@ int digit(int nb)
 	return dig;
 }
 
-/* int numin_soldan_nth_rakami(int num, int n)
-{
-	int i = 1;
-	while (num >= pow(10, n))
-	{
-		num /= 10;
-	}
-	return num;
-} */
-
 void print_arr(int *ar, int n)
 {
 	for (int i = 0; i < n; i++)
@@ -45,9 +35,7 @@ void print_arr(int *ar, int n)
 
 int check(int n, int m)
 {
-	if (((n % 2 == 0) && (m % 2 == 0)) || ((n % 2 == 1) && (m % 2 == 1)))
-		return 1;
-	return 0;
+	return ((n % 2) == (m % 2));
 }
 
 void ft_rev_int_tab(int *ar, int n)
@@ -85,18 +73,12 @@ int *finder(int num)
 		num = num / 10;
 	}
 	ft_rev_int_tab(ar, dig);
-	int greatest;
-	int i, i2;
-	for (i = 0; i < dig; i++)
+	for (int i = 0; i < dig; i++)
 	{
-		for (i2 = i + 1; i2 < dig; i2++)
+		for (int i2 = i + 1; i2 < dig; i2++)
 		{
-			greatest = 0;
 			if (ar[i] < ar[i2] && check(ar[i], ar[i2]) == 1)
-			{ // {2,4,8,1}
-				greatest = ar[i2];
 				swap(&ar[i], &ar[i2]);
-			}
 		}
 	}
 	return ar;
