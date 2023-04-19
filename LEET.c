@@ -1,20 +1,26 @@
-int digit(int nb) {
-	if (nb == 0 || nb == 1)
-		return 1;
-	int dig = 0;
-	while (nb) {
-		++dig;
-		nb /= 10;
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+bool containsDuplicate(int *nums, int numsSize)
+{
+	for (int i = 0; i < numsSize; i++)
+	{
+		for (int i2 = i + 1; i2 < numsSize; i2++)
+		{
+			if (nums[i] == nums[i2])
+				return true;
+		}
 	}
-	return dig;
+	return false;
 }
 
-int	findNumbers(int *nums, int numsSize)
+int main()
 {
-	int counter = 0;
-	for (int i = 0; i < numsSize; i++) {
-		if (digit(nums[i]) % 2 == 0)
-			counter++;
-	}
-	return counter;
+	int ar[] = {14, 20, 3, 1, 22};
+	int size = sizeof(ar) / sizeof(ar[0]);
+	printf("%d\n", containsDuplicate(ar, size));
 }
