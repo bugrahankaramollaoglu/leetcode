@@ -20,3 +20,9 @@ class Solution:
             n //= 10
         nbList.reverse()
         return nbList
+
+"""
+dene = Solution()
+asd = [1, 2, 3]
+print(dene.plusOne(asd))
+"""
