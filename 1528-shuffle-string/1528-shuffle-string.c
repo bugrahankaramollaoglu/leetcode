@@ -6,7 +6,6 @@ char *restoreString(char *s, int *indices, int indicesSize)
 {
 	char *s2 = malloc(sizeof(char) * strlen(s) + 1);
 	int i = 0;
-	int i2 = 0;
 	if (!s2)
 		return 0;
 	for (i = 0; i < strlen(s); i++)
