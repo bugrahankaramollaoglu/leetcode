@@ -10,3 +10,11 @@ int *runningSum(int *nums, int numsSize, int *returnSize)
 	}
 	return nums2;
 }
+
+/* daha kısa yolu
+for(int i=1;i<numsSize;i++)
+    {
+        nums[i]+=nums[i-1];
+    }
+    return nums;
+} */
